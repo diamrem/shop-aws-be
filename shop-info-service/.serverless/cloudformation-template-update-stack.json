@@ -71,10 +71,16 @@
         }
       }
     },
-    "HelloLogGroup": {
+    "GetShopAdminInfoLogGroup": {
       "Type": "AWS::Logs::LogGroup",
       "Properties": {
-        "LogGroupName": "/aws/lambda/shop-info-service-dev-hello"
+        "LogGroupName": "/aws/lambda/shop-info-service-eu-dev-getShopAdminInfo"
+      }
+    },
+    "GetShopInfoLogGroup": {
+      "Type": "AWS::Logs::LogGroup",
+      "Properties": {
+        "LogGroupName": "/aws/lambda/shop-info-service-eu-dev-getShopInfo"
       }
     },
     "IamRoleLambdaExecution": {
@@ -102,7 +108,7 @@
               "Fn::Join": [
                 "-",
                 [
-                  "shop-info-service",
+                  "shop-info-service-eu",
                   "dev",
                   "lambda"
                 ]
@@ -119,7 +125,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/shop-info-service-dev*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/shop-info-service-eu-dev*:*"
                     }
                   ]
                 },
@@ -130,7 +136,7 @@
                   ],
                   "Resource": [
                     {
-                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/shop-info-service-dev*:*:*"
+                      "Fn::Sub": "arn:${AWS::Partition}:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/shop-info-service-eu-dev*:*:*"
                     }
                   ]
                 }
@@ -143,7 +149,7 @@
           "Fn::Join": [
             "-",
             [
-              "shop-info-service",
+              "shop-info-service-eu",
               "dev",
               {
                 "Ref": "AWS::Region"
@@ -154,18 +160,18 @@
         }
       }
     },
-    "HelloLambdaFunction": {
+    "GetShopAdminInfoLambdaFunction": {
       "Type": "AWS::Lambda::Function",
       "Properties": {
         "Code": {
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/shop-info-service/dev/1629665388899-2021-08-22T20:49:48.899Z/shop-info-service.zip"
+          "S3Key": "serverless/shop-info-service-eu/dev/1629669449593-2021-08-22T21:57:29.593Z/shop-info-service-eu.zip"
         },
-        "Handler": "src/functions/hello/handler.main",
+        "Handler": "src/functions/getShopAdminInfo/handler.main",
         "Runtime": "nodejs14.x",
-        "FunctionName": "shop-info-service-dev-hello",
+        "FunctionName": "shop-info-service-eu-dev-getShopAdminInfo",
         "MemorySize": 1024,
         "Timeout": 6,
         "Environment": {
@@ -181,23 +187,63 @@
         }
       },
       "DependsOn": [
-        "HelloLogGroup"
+        "GetShopAdminInfoLogGroup"
       ]
     },
-    "HelloLambdaVersionlIKC5YGTLx75TPyiJjef1nBP2FxX2l6N9jrZJ9hTX4": {
+    "GetShopInfoLambdaFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "ServerlessDeploymentBucket"
+          },
+          "S3Key": "serverless/shop-info-service-eu/dev/1629669449593-2021-08-22T21:57:29.593Z/shop-info-service-eu.zip"
+        },
+        "Handler": "src/functions/getShopInfo/handler.main",
+        "Runtime": "nodejs14.x",
+        "FunctionName": "shop-info-service-eu-dev-getShopInfo",
+        "MemorySize": 1024,
+        "Timeout": 6,
+        "Environment": {
+          "Variables": {
+            "AWS_NODEJS_CONNECTION_REUSE_ENABLED": "1"
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "IamRoleLambdaExecution",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "GetShopInfoLogGroup"
+      ]
+    },
+    "GetShopAdminInfoLambdaVersionFcsQ1S01ztmWMfjOCJ4gRxbslPe2Wpv7mc3hf3BBY": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
-          "Ref": "HelloLambdaFunction"
+          "Ref": "GetShopAdminInfoLambdaFunction"
         },
-        "CodeSha256": "/VcqayyHubgFUoAMH9L7bb9tm1OgQiRLfRxtWDTzXBw="
+        "CodeSha256": "G7/tW7UtMXvs8jX1VjsL9Z2S4DUdQawI8089BjjztQI="
+      }
+    },
+    "GetShopInfoLambdaVersioneMEcISwH4NFr8v5ix8xsFutcwrm3RkrL7RFInHCSl0": {
+      "Type": "AWS::Lambda::Version",
+      "DeletionPolicy": "Retain",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "GetShopInfoLambdaFunction"
+        },
+        "CodeSha256": "G7/tW7UtMXvs8jX1VjsL9Z2S4DUdQawI8089BjjztQI="
       }
     },
     "ApiGatewayRestApi": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
-        "Name": "shop-info-service-dev",
+        "Name": "shop-info-service-eu-dev",
         "EndpointConfiguration": {
           "Types": [
             "EDGE"
@@ -253,7 +299,7 @@
                 ":lambda:path/2015-03-31/functions/",
                 {
                   "Fn::GetAtt": [
-                    "HelloLambdaFunction",
+                    "GetShopInfoLambdaFunction",
                     "Arn"
                   ]
                 },
@@ -264,7 +310,7 @@
         },
         "MethodResponses": [],
         "RequestValidatorId": {
-          "Ref": "ApiGatewayShopinfoserviceRequestValidator"
+          "Ref": "ApiGatewayShopinfoserviceeuRequestValidator"
         },
         "RequestModels": {
           "application/json": {
@@ -273,10 +319,10 @@
         }
       },
       "DependsOn": [
-        "HelloLambdaPermissionApiGateway"
+        "GetShopInfoLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayShopinfoserviceRequestValidator": {
+    "ApiGatewayShopinfoserviceeuRequestValidator": {
       "Type": "AWS::ApiGateway::RequestValidator",
       "Properties": {
         "RestApiId": {
@@ -284,7 +330,7 @@
         },
         "ValidateRequestBody": true,
         "ValidateRequestParameters": true,
-        "Name": "shop-info-service-dev | Validate request body and querystring parameters"
+        "Name": "shop-info-service-eu-dev | Validate request body and querystring parameters"
       }
     },
     "ApiGatewayMethodHelloPostApplicationJsonModel": {
@@ -307,7 +353,7 @@
         }
       }
     },
-    "ApiGatewayDeployment1629665320053": {
+    "ApiGatewayDeployment1629669409681": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -316,15 +362,53 @@
         "StageName": "dev"
       },
       "DependsOn": [
+        "ApiGatewayMethodHelloPost",
         "ApiGatewayMethodHelloPost"
       ]
     },
-    "HelloLambdaPermissionApiGateway": {
+    "GetShopAdminInfoLambdaPermissionApiGateway": {
       "Type": "AWS::Lambda::Permission",
       "Properties": {
         "FunctionName": {
           "Fn::GetAtt": [
-            "HelloLambdaFunction",
+            "GetShopAdminInfoLambdaFunction",
+            "Arn"
+          ]
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "ApiGatewayRestApi"
+              },
+              "/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "GetShopInfoLambdaPermissionApiGateway": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "GetShopInfoLambdaFunction",
             "Arn"
           ]
         },
@@ -363,16 +447,25 @@
         "Ref": "ServerlessDeploymentBucket"
       },
       "Export": {
-        "Name": "sls-shop-info-service-dev-ServerlessDeploymentBucketName"
+        "Name": "sls-shop-info-service-eu-dev-ServerlessDeploymentBucketName"
       }
     },
-    "HelloLambdaFunctionQualifiedArn": {
+    "GetShopAdminInfoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "HelloLambdaVersionlIKC5YGTLx75TPyiJjef1nBP2FxX2l6N9jrZJ9hTX4"
+        "Ref": "GetShopAdminInfoLambdaVersionFcsQ1S01ztmWMfjOCJ4gRxbslPe2Wpv7mc3hf3BBY"
       },
       "Export": {
-        "Name": "sls-shop-info-service-dev-HelloLambdaFunctionQualifiedArn"
+        "Name": "sls-shop-info-service-eu-dev-GetShopAdminInfoLambdaFunctionQualifiedArn"
+      }
+    },
+    "GetShopInfoLambdaFunctionQualifiedArn": {
+      "Description": "Current Lambda function version",
+      "Value": {
+        "Ref": "GetShopInfoLambdaVersioneMEcISwH4NFr8v5ix8xsFutcwrm3RkrL7RFInHCSl0"
+      },
+      "Export": {
+        "Name": "sls-shop-info-service-eu-dev-GetShopInfoLambdaFunctionQualifiedArn"
       }
     },
     "ServiceEndpoint": {
@@ -398,7 +491,7 @@
         ]
       },
       "Export": {
-        "Name": "sls-shop-info-service-dev-ServiceEndpoint"
+        "Name": "sls-shop-info-service-eu-dev-ServiceEndpoint"
       }
     }
   }
