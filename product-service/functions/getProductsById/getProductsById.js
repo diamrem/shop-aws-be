@@ -16,13 +16,13 @@ export const handler = async event => {
   const { productId } = event.pathParameters || {};
 
   if (!productId) {
-    return handleResponse({ message: "API_ERRORS.NO_ID" }, 400);
+    return handleResponse({ message: "There is no product with such ip" }, 400);
   }
 
   const product = products.find(({ id }) => id === productId);
 
   if (!product) {
-    return handleResponse({ message: "API_ERRORS.NO_ITEM_IN_DB" }, 400);
+    return handleResponse({ message: "There is no such product" }, 400);
   }
 
   return handleResponse({ ...product }, 200);
