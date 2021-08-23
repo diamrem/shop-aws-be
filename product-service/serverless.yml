@@ -59,19 +59,20 @@ package:
 #    - include-me-dir/**
 
 functions:
-  hello:
-    getProductsList: functions/getProductsList/getProductsList.handler
+  getProductsList:
+    handler: functions/getProductsList/getProductsList.handler
     events:
       - http:
           path: products 
           method: get
           cors: true
-    getProductsById:
-    handler: lambdas/endpoints/getProductsById.handler
+    
+  getProductsById:
+    handler: functions/getProductsById/getProductsById.handler
     events:
       - http:
           path: products/{productId}
-          method: GET
+          method: get
           cors: true
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
