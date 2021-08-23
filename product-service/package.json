@@ -1,0 +1,19 @@
+{
+  "name": "product-service",
+  "version": "1.0.0",
+  "description": "Product service for AWS App",
+  "main": "index.js",
+  "scripts": {
+    "test": "jtest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeLub/shop-aws-be.git"
+  },
+  "author": "Sergey Lubimov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeLub/shop-aws-be/issues"
+  },
+  "homepage": "https://github.com/SeLub/shop-aws-be#readme"
+}
