@@ -27,6 +27,8 @@ provider:
   stage: dev
   region: eu-central-1
 
+plugins:
+  - serverless-webpack
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
 #    - Effect: "Allow"
@@ -48,7 +50,8 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
+package:
+  individually: true
 #  patterns:
 #    - '!exclude-me.js'
 #    - '!exclude-me-dir/**'
@@ -57,11 +60,18 @@ provider:
 
 functions:
   hello:
-    handler: handler.hello
+    getProductsList: functions/getProductsList/getProductsList.handler
     events:
       - http:
           path: products 
           method: get
+          cors: true
+    getProductsById:
+    handler: lambdas/endpoints/getProductsById.handler
+    events:
+      - http:
+          path: products/{productId}
+          method: GET
           cors: true
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
