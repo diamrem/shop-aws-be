@@ -18,24 +18,22 @@ FE task-3 PR: ------------------
 
 Dedicated S3 Bucket hosts product`s images
 
-#EVALUATION CRITERIA
+#EVALUATION CRITERIA#
 
 1 - poiproduct-service serverless config contains configuration for 2 lambda functions, API is not working at all, but YAML configuration is correct - ..#Done
 2 - The getProductsList OR getProductsById lambda function returns a correct response (POINT1) - ..#Done
 3 - The getProductsById AND getProductsList lambda functions return a correct response code (POINT2) - ..#Done
 4 - Your own Frontend application is integrated with product service (/products API) and products from product-service are represented on Frontend. AND POINT1 and POINT2 are done.
 
-#Additional options
-- [x] This is a complete item
-- [ ] This is an incomplete item
+#Additional options#
 
-+1 - Async/await is used in lambda functions - ..__Done__
-+1 - ES6 modules are used for product-service implementation - __Done__
-+1 - Webpack is configured for product-service - ..__Done__
-+1 (All languages) - SWAGGER documentation is created for product-service
-+1 (All languages) - Lambda handlers are covered by basic UNIT tests (NO infrastructure logic is needed to be covered)
-+1 (All languages) - Lambda handlers (getProductsList, getProductsById) code is written not in 1 single module (file) and separated in codebase. - ..__Done__
-+1 (All languages) - Main error scenarious are handled by API ("Product not found" error).
+- [x] Async/await is used in lambda functions.
+- [x] ES6 modules are used for product-service implementation.
+- [x] Webpack is configured for product-service.
+- [ ] SWAGGER documentation is created for product-service.
+- [ ] Lambda handlers are covered by basic UNIT tests (NO infrastructure logic is needed to be covered)
+- [x] Lambda handlers (getProductsList, getProductsById) code is written not in 1 single module (file) and separated in codebase.
+- [ ] Main error scenarious are handled by API ("Product not found" error).
 ------------
 __#Endpoints#__
 
