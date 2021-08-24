@@ -10,7 +10,7 @@ Self check:
  
 
 
-#FRONTEND
+__#FRONTEND#__
 
 ----------------
 
@@ -26,16 +26,18 @@ Dedicated S3 Bucket hosts product`s images
 4 - Your own Frontend application is integrated with product service (/products API) and products from product-service are represented on Frontend. AND POINT1 and POINT2 are done.
 
 #Additional options
+- [x] This is a complete item
+- [ ] This is an incomplete item
 
-+1 - Async/await is used in lambda functions - ..#Done
-+1 - ES6 modules are used for product-service implementation - ..#Done
-+1 - Webpack is configured for product-service - ..#Done
++1 - Async/await is used in lambda functions - ..__Done__
++1 - ES6 modules are used for product-service implementation - __Done__
++1 - Webpack is configured for product-service - ..__Done__
 +1 (All languages) - SWAGGER documentation is created for product-service
 +1 (All languages) - Lambda handlers are covered by basic UNIT tests (NO infrastructure logic is needed to be covered)
-+1 (All languages) - Lambda handlers (getProductsList, getProductsById) code is written not in 1 single module (file) and separated in codebase. - ..#Done
++1 (All languages) - Lambda handlers (getProductsList, getProductsById) code is written not in 1 single module (file) and separated in codebase. - ..__Done__
 +1 (All languages) - Main error scenarious are handled by API ("Product not found" error).
 ------------
-#Endpoints
+__#Endpoints#__
 
 getProductsList - get ALL products in JSON
 GET - https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products
