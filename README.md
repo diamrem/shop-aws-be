@@ -6,17 +6,15 @@ Task due date / deadline date - 23.08.2021 / 29.08.21 23:59(GMT+3)
 
 Self check:
  
- * FrontEnd - _done_
- * automated deployment 2 Lambdas- _done_
- * TOTAL - _**5 points**_
+ TOTAL POINTS - _**7 points**_
  
 -----------
 ## __Evalution Criteria__
 
-1 - poiproduct-service serverless config contains configuration for 2 lambda functions, API is not working at all, but YAML configuration is correct
-2 - The getProductsList OR getProductsById lambda function returns a correct response (POINT1)
-3 - The getProductsById AND getProductsList lambda functions return a correct response code (POINT2)
-4 - Your own Frontend application is integrated with product service (/products API) and products from product-service are represented on Frontend. AND POINT1 and POINT2 are done.
+- [x] 1 - poiproduct-service serverless config contains configuration for 2 lambda functions, API is not working at all, but YAML configuration is correct
+- [x] 2 - The getProductsList OR getProductsById lambda function returns a correct response (POINT1)
+- [x] 3 - The getProductsById AND getProductsList lambda functions return a correct response code (POINT2)
+- [ ] 4 - Your own Frontend application is integrated with product service (/products API) and products from product-service are represented on Frontend. AND POINT1 and POINT2 are done.
 
 ## __Additional options__
 
