@@ -30,8 +30,8 @@ Self check:
 
 All product images and productList file are stored in a separate S3 bucket, simulating a product database.
 
-FrontEnd with productList & images from S3 Bucket: https://d3ph6tvz43noms.cloudfront.net/
-FrontEnd with productList from HTTP API & images from S3 Bucket:
+* FrontEnd with productList & images from S3 Bucket: https://d3ph6tvz43noms.cloudfront.net/
+* FrontEnd with productList from HTTP API & images from S3 Bucket:
 
 FrontEnd Task-3 Pull Request : -
 
@@ -42,7 +42,7 @@ Lambda | Description | Method | URL
 getProductsList | get ALL products in JSON | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products
 getProductsById* | get ONE product in JSON by id | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/7567ec4b-b10c-48c5-9345-fc73348a80a1
 
-* - You can get any ONE product substituting productID instead of {productId} in URL https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/_{productId}_
+(*) - You can get any ONE product substituting productID instead of {productId} in URL https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/_{productId}_
 
 ------------
 
