@@ -28,9 +28,9 @@ Self check:
 ------------
 # __FrontEnd__
 
-* FrontEnd with productList & images from S3 Bucket: https://d3ph6tvz43noms.cloudfront.net/
+* FrontEnd with productList & images from S3 Bucket: https://d3ph6tvz43noms.cloudfront.net/  
   All product images and productList file are stored in a separate S3 bucket, simulating a product database.
-* FrontEnd with productList from HTTP API & images from S3 Bucket:
+* FrontEnd with productList from HTTP API & images from S3 Bucket:  
   Evalution Criteria.4:Frontend application is integrated with product service (/products API)
 
 FrontEnd Task-3 Pull Request : -
