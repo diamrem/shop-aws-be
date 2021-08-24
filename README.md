@@ -10,7 +10,7 @@ Self check:
  
 
 
-__#FRONTEND#__
+# __FRONTEND__
 
 ----------------
 
