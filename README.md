@@ -30,7 +30,9 @@ Self check:
 
 All product images and productList file are stored in a separate S3 bucket, simulating a product database.
 
-FrontEnd : 
+FrontEnd with productList & images from S3 Bucket: https://d3ph6tvz43noms.cloudfront.net/
+FrontEnd with productList from HTTP API & images from S3 Bucket:
+
 FrontEnd Task-3 Pull Request : -
 
 # __BackEnd__
