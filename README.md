@@ -4,4 +4,4 @@ List of Tasks: https://github.com/EPAM-JS-Competency-center/cloud-development-co
 
 Status | Task | Url
 -----|-----|--------
-- [ ] In Progress | Task -2 | https://github.com/SeLub/shop-aws-be/tree/task-3
+- [ ] | Task -2 | https://github.com/SeLub/shop-aws-be/tree/task-3
