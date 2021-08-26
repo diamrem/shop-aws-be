@@ -1,5 +1,6 @@
 # BackEnd Repository for AWS web store
-All Task: https://github.com/EPAM-JS-Competency-center/cloud-development-course-initial
+
+List of Tasks: https://github.com/EPAM-JS-Competency-center/cloud-development-course-initial
 
 Task | Url | Status
 -----|-----|--------
