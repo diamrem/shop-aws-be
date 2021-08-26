@@ -2,7 +2,7 @@
 import products from '../productList.json';
 
 
-const handleResponse = (products = {}, status = 200) => ({
+const response = (products = {}, status = 200) => ({
   headers: {
     'Content-Type': 'application/json',
     'Access-Control-Allow-Methods': '*',
@@ -13,17 +13,11 @@ const handleResponse = (products = {}, status = 200) => ({
 });
 
 export const handler = async event => {
-  const { productId } = event.pathParameters || {};
+        const { productId } = event.pathParameters || {};
+        const product = products.find(({ id }) => id === productId);
 
-  if (!productId) {
-    return handleResponse({ message: "There is no product with such ip" }, 400);
-  }
-
-  const product = products.find(({ id }) => id === productId);
-
-  if (!product) {
-    return handleResponse({ message: "There is no such product" }, 400);
-  }
-
-  return handleResponse({ ...product }, 200);
+          if (!productId) { return response({ message: "You missed product id!" }, 400);}
+          if (!product)   { return response({ message: `Wrong product id! No product with ${id}.` }, 400);
+          }
+    return response({ ...product }, 200);
 };
