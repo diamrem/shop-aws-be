@@ -6,7 +6,7 @@ Task due date / deadline date - 27.08.2021 / 29.08.21 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - _**10 points**_
+ TOTAL POINTS - _**11 points**_
  
 -----------
 ## __Evalution Criteria__
@@ -21,7 +21,7 @@ Self check:
 - [x] Async/await is used in lambda functions.
 - [x] ES6 modules are used for product-service implementation.
 - [x] Webpack is configured for product-service.
-- [ ] SWAGGER documentation is created for product-service.
+- [x] SWAGGER documentation is created for product-service.
 - [x] Lambda handlers are covered by basic UNIT tests (NO infrastructure logic is needed to be covered)
 - [x] Lambda handlers (getProductsList, getProductsById) code is written not in 1 single module (file) and separated in codebase.
 - [x] Main error scenarious are handled by API ("Product not found" error).
@@ -29,9 +29,7 @@ Self check:
 # __FrontEnd__
 
 * FrontEnd integrated with product service HTTP API & images from S3 Bucket: https://d3ph6tvz43noms.cloudfront.net/ 
-
-
-FrontEnd Task-3 Pull Request : -
+* FrontEnd Task-3 Pull Request : -
 
 # __BackEnd__
 
@@ -44,3 +42,4 @@ getProductsById | Product not found | GET | https://8kbhxjy1vk.execute-api.eu-ce
 ------------
 
 # __Swagger documentation__
+https://app.swaggerhub.com/apis/SeLub/AWSShopAPI/1.0.0
