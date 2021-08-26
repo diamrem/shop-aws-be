@@ -2,6 +2,6 @@
 
 List of Tasks: https://github.com/EPAM-JS-Competency-center/cloud-development-course-initial
 
-Task | Url | Status
+Status | Task | Url
 -----|-----|--------
-- [x] In Progress| https://github.com/SeLub/shop-aws-be/tree/task-3 | - [x] In Progress
+- [ ] In Progress| Task -2 | https://github.com/SeLub/shop-aws-be/tree/task-3
