@@ -89,9 +89,7 @@ const response = (products = {}, status = 200) => ({
 const handler = async event => {
         const { productId } = event.pathParameters || {};
         const product = _productList_json__WEBPACK_IMPORTED_MODULE_0__.find(({ id }) => id === productId);
-
-          if (!productId) { return response({ message: "You missed product id!" }, 400);}
-          if (!product)   { return response({ message: `Wrong product id!` }, 400);
+        if (!product)   { return response({ message: 'Error: Product not found!' }, 400);
           }
     return response({ ...product }, 200);
 };

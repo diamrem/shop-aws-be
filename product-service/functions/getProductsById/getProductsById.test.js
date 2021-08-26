@@ -3,7 +3,7 @@ import genRequest from '../rqStructure.js'
 import productList from '../productList.json';
 
 describe('Function getProductsById',()=>{
-	test(' should return product with firs product id', async ()=> {
+	test('should return product with first-product-id', async ()=> {
 		const firstProduct  = productList[0]
 		
 		const event = genRequest({
@@ -19,7 +19,7 @@ describe('Function getProductsById',()=>{
     expect(receivedData).toEqual(firstProduct);
     expect(res.statusCode).toBe(200);
   });
-  test('should return an error if no product with id== 777', async ()=>{
+  test('should return an error =Product not found= for random id (for exemple id=777)', async ()=>{
     const failId = '777'
 
     const event = genRequest({
@@ -32,7 +32,7 @@ describe('Function getProductsById',()=>{
     const {message} = JSON.parse(res.body) || {}
 
     expect(res.statusCode).toBe(400)
-    expect(message).toEqual('Product not found')
+    expect(message).toEqual('Error: Product not found!')
 
     })
   })
