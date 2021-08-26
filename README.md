@@ -6,7 +6,7 @@ Task due date / deadline date - 23.08.2021 / 29.08.21 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - _**8 points**_
+ TOTAL POINTS - _**9 points**_
  
 -----------
 ## __Evalution Criteria__
@@ -24,7 +24,7 @@ Self check:
 - [ ] SWAGGER documentation is created for product-service.
 - [ ] Lambda handlers are covered by basic UNIT tests (NO infrastructure logic is needed to be covered)
 - [x] Lambda handlers (getProductsList, getProductsById) code is written not in 1 single module (file) and separated in codebase.
-- [ ] Main error scenarious are handled by API ("Product not found" error).
+- [x] Main error scenarious are handled by API ("Product not found" error).
 ------------
 # __FrontEnd__
 
@@ -41,6 +41,7 @@ Lambda | Description | Method | URL
 -------|-------------|--------|-----
 getProductsList | get ALL products in JSON | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products
 getProductsById* | get ONE product in JSON by id | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/7567ec4b-b10c-48c5-9345-fc73348a80a1
+getProductsById | Product not found | GET https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/777
 
 (*) - You can get any ONE product substituting productID instead of {productId} in URL https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/_{productId}_
 
