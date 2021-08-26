@@ -41,7 +41,7 @@ Lambda | Description | Method | URL
 -------|-------------|--------|-----
 getProductsList | get ALL products in JSON | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products
 getProductsById* | get ONE product in JSON by id | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/7567ec4b-b10c-48c5-9345-fc73348a80a1
-getProductsById | Product not found | GET https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/777
+getProductsById | Product not found | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/777
 
 (*) - You can get any ONE product substituting productID instead of {productId} in URL https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/_{productId}_
 
