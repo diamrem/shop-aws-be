@@ -4,7 +4,8 @@
   "description": "Product service for AWS App",
   "main": "index.js",
   "scripts": {
-    "test": "jtest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,12 @@
     "prettier": "^2.3.2",
     "serverless-webpack": "^5.5.1",
     "webpack": "^5.50.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "bugs": {
     "url": "https://github.com/SeLub/shop-aws-be/issues"
