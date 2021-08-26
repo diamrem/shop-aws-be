@@ -22,14 +22,14 @@ Self check:
 - [x] ES6 modules are used for product-service implementation.
 - [x] Webpack is configured for product-service.
 - [ ] SWAGGER documentation is created for product-service.
-- [ ] Lambda handlers are covered by basic UNIT tests (NO infrastructure logic is needed to be covered)
+- [x] Lambda handlers are covered by basic UNIT tests (NO infrastructure logic is needed to be covered)
 - [x] Lambda handlers (getProductsList, getProductsById) code is written not in 1 single module (file) and separated in codebase.
 - [x] Main error scenarious are handled by API ("Product not found" error).
 ------------
 # __FrontEnd__
 
-* FrontEnd with productList from HTTP API & images from S3 Bucket: https://d3ph6tvz43noms.cloudfront.net/ 
-  _Evalution Criteria.4:Frontend application is integrated with product service (/products API)_
+* FrontEnd integrated with product service HTTP API & images from S3 Bucket: https://d3ph6tvz43noms.cloudfront.net/ 
+
 
 FrontEnd Task-3 Pull Request : -
 
@@ -38,10 +38,8 @@ FrontEnd Task-3 Pull Request : -
 Lambda | Description | Method | URL 
 -------|-------------|--------|-----
 getProductsList | get ALL products in JSON | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products
-getProductsById* | get ONE product in JSON by id | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/7567ec4b-b10c-48c5-9345-fc73348a80a1
+getProductsById | get ONE product in JSON by id | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/7567ec4b-b10c-48c5-9345-fc73348a80a1
 getProductsById | Product not found | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/777
-
-(*) - You can get any ONE product substituting productID instead of {productId} in URL https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/_{productId}_
 
 ------------
 
