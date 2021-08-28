@@ -29,7 +29,7 @@ Self check:
 # __FrontEnd__
 
 * FrontEnd integrated with product service HTTP API & images from S3 Bucket: https://d3ph6tvz43noms.cloudfront.net/ 
-* FrontEnd Task-3 Pull Request : -
+* FrontEnd Task-3 Pull Request : - https://github.com/SeLub/shop-aws-fe/pull/2
 
 # __BackEnd__
 
