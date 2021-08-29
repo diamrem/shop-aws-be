@@ -11,4 +11,4 @@ const handleResponse = (products = {}, status = 200) => ({
   body: JSON.stringify(products),
 });
 
-export const handler = async event => handleResponse(products);
+export const handler = async event => await handleResponse(products);
