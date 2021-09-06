@@ -1,4 +1,4 @@
-# __Task 3__
+# __Task 4__
 
 Task [description here](https://github.com/EPAM-JS-Competency-center/cloud-development-course-initial/blob/main/task4-integration-with-database/task.md)
 
@@ -6,7 +6,7 @@ Task due date / deadline date - ????????? / 13.09.21 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - _**11 points**_
+ TOTAL POINTS - _** ?? points**_
  
 -----------
 ## __Evalution Criteria__
