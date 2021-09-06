@@ -33,5 +33,8 @@
   "bugs": {
     "url": "https://github.com/SeLub/shop-aws-be/issues"
   },
-  "homepage": "https://github.com/SeLub/shop-aws-be#readme"
+  "homepage": "https://github.com/SeLub/shop-aws-be#readme",
+  "dependencies": {
+    "pg": "^8.7.1"
+  }
 }
