@@ -6,12 +6,12 @@ Task due date / deadline date - ????????? / 13.09.21 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - _** ?? points**_
+ TOTAL POINTS - _** 1 points**_
  
 -----------
 ## __Evalution Criteria__
 
-- [ ] 1 - TASK 4.1 is implemented
+- [х] 1 - TASK 4.1 is implemented => Link to [SQL script with exemple data](https://github.com/SeLub/shop-aws-be/blob/task-4/product-service/sql_scripts/products_and_stocks.sql)
 - [ ] 3 - TASK 4.2 is implemented lambda links are provided and returns data
 - [ ] 4 - TASK 4.3 is implemented lambda links are provided and products is stored in DB (call TASK 4.2 to see the product)
 - [ ] 5 - Your own Frontend application is integrated with product service (/products API) and products from product-service are represented on Frontend. Link to a working Front-End application is provided for cross-check reviewer.
