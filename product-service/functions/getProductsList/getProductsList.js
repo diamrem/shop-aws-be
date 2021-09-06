@@ -12,11 +12,7 @@ const handleResponse = (products = {}, status = 200) => ({
 });
 
 const credentials = {
-  user: "postgres",
-  host: "task-4.citzxb6pxpgh.eu-central-1.rds.amazonaws.com",
-  database: "postgres",
-  password: "wD2i3pq31Ou7mqNQO5e4",
-  port: 5432,
+
 };
 
 async function getProductList() {
