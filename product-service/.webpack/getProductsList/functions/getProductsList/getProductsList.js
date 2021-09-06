@@ -9281,7 +9281,7 @@ const credentials = {
 async function getProductList() {
   const client = new pg__WEBPACK_IMPORTED_MODULE_0__.Client(credentials);
   await client.connect();
-  const data = await client.query('select products.* from products');
+  const data = await client.query('SELECT products.*, stocks.count FROM products LEFT JOIN stocks ON products.id = stocks.product_id');
   const rows = data.rows
   await client.end();
 
