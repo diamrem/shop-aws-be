@@ -9258,7 +9258,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var pg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var pg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(pg__WEBPACK_IMPORTED_MODULE_0__);
 
-
 //const { Client } = require("pg");
 
 const handleResponse = (products = {}, status = 200) => ({
@@ -9274,7 +9273,7 @@ const handleResponse = (products = {}, status = 200) => ({
 const credentials = {
   user: "postgres",
   host: "task-4.citzxb6pxpgh.eu-central-1.rds.amazonaws.com",
-  database: "productList",
+  database: "postgres",
   password: "wD2i3pq31Ou7mqNQO5e4",
   port: 5432,
 };
@@ -9282,7 +9281,8 @@ const credentials = {
 async function getProductList() {
   const client = new pg__WEBPACK_IMPORTED_MODULE_0__.Client(credentials);
   await client.connect();
-  const rows = await client.query('select * from products');
+  const data = await client.query('select products.* from products');
+  const rows = data.rows
   await client.end();
 
   return rows;
@@ -9290,7 +9290,7 @@ async function getProductList() {
 
 //(async () => {
 //  const clientResult = await getProductList();
-//  console.log("ProductList: " + JSON.stringify(handleResponse(clientResult)));
+//  console.log("ProductList: " + JSON.stringify(await getProductList()  ))
 //})();
 
 const handler = async event => await handleResponse(await getProductList());
