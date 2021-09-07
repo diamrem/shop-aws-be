@@ -9270,13 +9270,20 @@ const handleResponse = (products = {}, status = 200) => ({
   body: JSON.stringify(products),
 });
 
+const { PG_HOST, PG_PORT, PG_DATABASE, PG_USERNAME, PG_PASSWORD } = process.env;
+
 const credentials = {
-  user: "postgres",
-  host: "task-4.citzxb6pxpgh.eu-central-1.rds.amazonaws.com",
-  database: "postgres",
-  password: "wD2i3pq31Ou7mqNQO5e4",
-  port: 5432,
+  user: PG_USERNAME,
+  host: PG_HOST,
+  database: PG_DATABASE,
+  password: PG_PASSWORD,
+  port: PG_PORT,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+  connectionTimeoutMillis: 5000,
 };
+
 
 async function getProductList() {
   const client = new pg__WEBPACK_IMPORTED_MODULE_0__.Client(credentials);

@@ -25,9 +25,6 @@ const credentials = {
   connectionTimeoutMillis: 5000,
 };
 
-const credentials = {
-
-};
 
 async function getProductList() {
   const client = new Client(credentials);
