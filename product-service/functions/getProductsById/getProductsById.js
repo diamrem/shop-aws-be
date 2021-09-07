@@ -43,3 +43,12 @@ export const handler = async event => {
   const { productId } = event.pathParameters || {};
   return await handleResponse(await getProductById(productId));
 }
+
+
+
+
+     //   if (!productId) { return response({ message: 'Error: Product not found! No Id Provided' }, 400) }
+     //     else {
+     //       const product = await getProductById(productId);
+     //           if (!product)   { return response({ message: `Error: Product not found! No Product found with id:${productId}` }, 400);}
+     //     }
