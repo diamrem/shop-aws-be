@@ -9285,10 +9285,13 @@ const credentials = {
 };
 
 
-async function getProductList() {
+async function getProductById(productId) {
   const client = new pg__WEBPACK_IMPORTED_MODULE_0__.Client(credentials);
   await client.connect();
-  const data = await client.query('SELECT products.*, stocks.count FROM products LEFT JOIN stocks ON products.id = stocks.product_id');
+  const data = await client.query(`SELECT products.*, stocks.count \
+                                    FROM products LEFT JOIN stocks \
+                                    ON products.id = stocks.product_id\
+                                    WHERE products.id='${productId}'`);
   const rows = data.rows
   await client.end();
 
@@ -9300,8 +9303,10 @@ async function getProductList() {
 //  console.log("ProductList: " + JSON.stringify(await getProductList()  ))
 //})();
 
-const handler = async event => await handleResponse(await getProductList());
-
+const handler = async event => {
+  const { productId } = event.pathParameters || {};
+  return await handleResponse(await getProductById(productId));
+}
 })();
 
 var __webpack_export_target__ = exports;
