@@ -6,13 +6,13 @@ Task due date / deadline date - ????????? / 13.09.21 23:59(GMT+3)
 
 Self check:
  
- TOTAL POINTS - _** 1 points**_
+ TOTAL POINTS - _** 3 points**_
  
 -----------
 ## __Evalution Criteria__
 
 - [x] 1 - TASK 4.1 is implemented => Link to [SQL script with exemple data](https://github.com/SeLub/shop-aws-be/blob/task-4/product-service/sql_scripts/products_and_stocks.sql)
-- [ ] 3 - TASK 4.2 is implemented lambda links are provided and returns data
+- [x] 3 - TASK 4.2 is implemented lambda links are provided and returns data
 - [ ] 4 - TASK 4.3 is implemented lambda links are provided and products is stored in DB (call TASK 4.2 to see the product)
 - [ ] 5 - Your own Frontend application is integrated with product service (/products API) and products from product-service are represented on Frontend. Link to a working Front-End application is provided for cross-check reviewer.
 
@@ -30,12 +30,14 @@ Self check:
 
 # __BackEnd__
 
-Lambda | Description | Method | URL 
+Task | Description | Method | URL 
 -------|-------------|--------|-----
-getProductsList | get ALL products from DB | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products
-getProductsById | get ONE product from DB by id | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/7567ec4b-b10c-48c5-9345-fc73348a80a1
-getProductsById | Product in DB not found | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/777
-getProductsById | POST to add product to DB | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/777
+
+Task 4.1 | SQL script with exemple data | GET | [SQL script with exemple data](https://github.com/SeLub/shop-aws-be/blob/task-4/product-service/sql_scripts/products_and_stocks.sql)
+Task 4.2 | getProductsList get ALL products from DB | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products
+Task 4.2 | getProductsById get ONE product from DB by id | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/39d39374-ef1f-4be7-ab61-43a55e64f0ad
+Task 4.2 | getProductsById Product in DB not found | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/777
+Task 4.3 | getProductsById POST to add product to DB | GET | https://8kbhxjy1vk.execute-api.eu-central-1.amazonaws.com/dev/products/777
 
 ------------
 

@@ -29,10 +29,13 @@ const credentials = {
 async function getProductById(productId) {
   const client = new Client(credentials);
   await client.connect();
+  client.on('notice', msg => console.warn('notice:', msg)) 
+  
   const data = await client.query(`SELECT products.*, stocks.count \
                                     FROM products LEFT JOIN stocks \
                                     ON products.id = stocks.product_id\
-                                    WHERE products.id='${productId}'`);
+                                    WHERE products.id='${productId}'`)
+  ;
   const rows = data.rows
   await client.end();
 
