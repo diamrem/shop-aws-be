@@ -1,5 +1,4 @@
 import { Client } from 'pg';
-//const { Client } = require("pg");
 
 const handleResponse = (products = {}, status = 200) => ({
   headers: {
@@ -28,18 +27,21 @@ const credentials = {
 
 async function getProductList() {
   const client = new Client(credentials);
-  await client.connect();
-  client.on('notice', msg => console.warn('notice:', msg))
-  const data = await client.query('SELECT products.*, stocks.count FROM products LEFT JOIN stocks ON products.id = stocks.product_id');
-  const rows = data.rows
-  await client.end();
+        client.on('notice', msg => console.warn('notice:', msg))
+        client.on('error', err => { console.error('Error:', err.stack);  })
 
-  return rows;
+    await client.connect()
+                .then(() => console.log('DB has connected'))
+                .catch(err => console.error('Connection DB error', err.stack));
+
+
+
+    const data = await client.query('SELECT products.*, stocks.count FROM products LEFT JOIN stocks ON products.id = stocks.product_id')
+                .then(result => console.log(result))
+                .catch(e => console.error(e.stack))
+                .then(() => client.end());
+    
+  return data.rows;
 }
-
-//(async () => {
-//  const clientResult = await getProductList();
-//  console.log("ProductList: " + JSON.stringify(await getProductList()  ))
-//})();
 
 export const handler = async event => await handleResponse(await getProductList());
