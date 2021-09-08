@@ -1,4 +1,5 @@
 import { Client } from 'pg';
+//const { Client } = require("pg");
 
 const handleResponse = (products = {}, status = 200) => ({
   headers: {
@@ -24,24 +25,20 @@ const credentials = {
   connectionTimeoutMillis: 5000,
 };
 
+let data_export = {}, error_code = 200;
 
-async function getProductList() {
+export const handler = async event => {
+  
   const client = new Client(credentials);
-        client.on('notice', msg => console.warn('notice:', msg))
-        client.on('error', err => { console.error('Error:', err.stack);  })
 
-    await client.connect()
-                .then(() => console.log('DB has connected'))
-                .catch(err => console.error('Connection DB error', err.stack));
+  await client.connect();
 
+  await client
+    .query('SELECT products.*, stocks.count FROM products LEFT JOIN stocks ON products.id = stocks.product_id')
+    .then(res => { data_export = res.rows })
+    .catch(e => { data_export = e.stack; error_code = 500})
 
+  await client.end();
 
-    const data = await client.query('SELECT products.*, stocks.count FROM products LEFT JOIN stocks ON products.id = stocks.product_id')
-                .then(result => console.log(result))
-                .catch(e => console.error(e.stack))
-                .then(() => client.end());
-    
-  return data.rows;
+  return await handleResponse({data_export, error_code});
 }
-
-export const handler = async event => await handleResponse(await getProductList());

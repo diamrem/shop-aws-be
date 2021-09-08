@@ -9284,28 +9284,22 @@ const credentials = {
   connectionTimeoutMillis: 5000,
 };
 
-
-async function getProductById(productId) {
-  const client = new pg__WEBPACK_IMPORTED_MODULE_0__.Client(credentials);
-  await client.connect();
-  const data = await client.query(`SELECT products.*, stocks.count \
-                                    FROM products LEFT JOIN stocks \
-                                    ON products.id = stocks.product_id\
-                                    WHERE products.id='${productId}'`);
-  const rows = data.rows
-  await client.end();
-
-  return rows;
-}
-
-//(async () => {
-//  const clientResult = await getProductList();
-//  console.log("ProductList: " + JSON.stringify(await getProductList()  ))
-//})();
+let data_export = {}, error_code = 200;
 
 const handler = async event => {
-  const { productId } = event.pathParameters || {};
-  return await handleResponse(await getProductById(productId));
+  
+  const client = new pg__WEBPACK_IMPORTED_MODULE_0__.Client(credentials);
+
+  await client.connect();
+
+  await client
+    .query('SELECT products.*, stocks.count FROM products LEFT JOIN stocks ON products.id = stocks.product_id')
+    .then(res => { data_export = res.rows })
+    .catch(e => { data_export = e.stack})
+
+  await client.end();
+
+  return await handleResponse({data_export, error_code});
 }
 })();
 

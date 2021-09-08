@@ -29,8 +29,12 @@ const credentials = {
 async function getProductById(productId) {
   const client = new Client(credentials);
   await client.connect();
-  client.on('notice', msg => console.warn('notice:', msg)) 
-  
+  client.on('Notice', msg => console.warn('notice:', msg));
+
+  client.on('error', err => {
+  console.error('Error:', err.stack);
+            })
+
   const data = await client.query(`SELECT products.*, stocks.count \
                                     FROM products LEFT JOIN stocks \
                                     ON products.id = stocks.product_id\
