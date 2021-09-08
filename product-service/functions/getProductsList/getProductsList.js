@@ -36,7 +36,7 @@ export const handler = async event => {
   await client
     .query('SELECT products.*, stocks.count FROM products LEFT JOIN stocks ON products.id = stocks.product_id')
     .then(res => { data_export = res.rows })
-    .catch(e => { data_export = e.stack; error_code = 500})
+    .catch(e => { data_export = 'DB Error 500:' + e.stack; error_code = 500})
 
   await client.end();
 
